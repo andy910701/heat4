@@ -17,8 +17,8 @@ body {
   .ingredient {
     width: 8%;
     cursor: pointer;
-    padding: 3px;
-    margin: 1%;
+    padding: 0.5%;
+    margin: 0.5%;
     text-align: center;
     display: flex;
     flex-direction: column; /* 將元素排列成一列 */
@@ -28,8 +28,8 @@ body {
   }
   
   .ingredient-image {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
   }
   
   .ingredient-text {
