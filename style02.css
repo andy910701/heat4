@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .ingredient {
+    width: 8%;
+    cursor: pointer;
+    padding: 3px;
+    margin: 1%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* 將元素排列成一列 */
+    align-items: center; /* 對齊元素置中 */
+    background-color: lightblue; /* 添加背景色 */
+    border: 4px solid #000000; /* 添加2px宽的灰色实线边框 */
+  }
+  
+  .ingredient-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .ingredient-text {
+    margin-top: 10px; /* 設定文字與圖片的間距 */
+  }
+  
+  .ingredient:hover {
+    background-color: #4d12d7;
+  }
+  
+  #totalCaloriesDisplay {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  .ingredient-text {
+    margin-top: 10px;
+    font-family: '標楷體'; /* 使用標楷體 */
+    color: black; /* 初始狀態下的字體顏色 */
+  }
+  
+  .ingredient:hover .ingredient-text {
+    font-family: '標楷體'; /* 使用標楷體 */
+    color: white; /* 懸停時的字體顏色 */
+  }
+  
+  .controls {
+    
+    margin-left: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .controls button {
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 8px;
+    border: 5px solid black;
+  }
+  
+  .controls button:hover {
+    background-color: #000; /* 背景變為黑色 */
+    color: white; /* 字變為白色 */
+    border: 5px solid rgb(255, 255, 255);
+  }
+
+  #selectedIngredientsDisplay {
+    text-align: center; /* 將選擇的配料置中 */
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px; /* 加入底邊距以避免與下方配料重疊 */
+    font-family: '標楷體'; /* 使用標楷體 */
+  }
+
+  #selectedDetails {
+    text-align: center; /* 將選擇的配料置中 */
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px; /* 加入底邊距以避免與下方配料重疊 */
+    font-family: "'Times New Roman'", Times, serif;
+    font-weight: bold; /* 讓字體變粗 */
+  }
+
+  .container {
+    display: flex;
+    justify-content: center; /* 将内容水平置中 */
+    align-items: center;
+    padding: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px; /* 调整按钮之间的间距 */
+    margin-right: 10px; /* 调整按钮右边的间距 */
+    text-align: center; /* 让按钮内的文本居中显示 */
+}
+
+.dropbtn {
+    margin-left: 5%;
+    margin-top: 0%; /* 向上移動按鈕，根據需要進行調整 */
+    display: flex;
+    background-color: #ae23d9;
+    color: white;
+    padding: 5px; /* 调整按钮的内边距 */
+    font-size: 40px; /* 调整按钮的字体大小 */
+    border: none;
+    cursor: pointer;
+    font-family: '標楷體', 'KaiTi', sans-serif; /* 设置字体为標楷體 */
+    border: 10px solid #000000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left:52.5%; /* 水平居中 */
+  transform: translateX(-50%); /* 水平居中 */
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ccc; /* 添加分隔线 */
+  font-family: '標楷體', 'KaiTi', sans-serif; /* 设置字体为標楷體 */
+}
+
+.dropdown-content a:hover {
+    background-color: #159b4d;
+    border: 3px solid red;
+    color: white; /* 鼠标悬停时字体颜色为白色 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #cf9ddd;
+    color: black;
+}
+
+/* 黑色 */
+#caloriesValue {
+  color: black;
+}
+
+/* 綠色 */
+#caloriesValue.green {
+  color: rgb(38, 228, 38);
+}
+
+/* 藍色 */
+#caloriesValue.blue {
+  color: blue;
+  animation: blink-blue 2.3s infinite; /* 調整動畫速度 */
+}
+
+/* 紅色 */
+#caloriesValue.red {
+  color: red;
+  animation: blink 1s infinite;
+}
+
+/* 定義閃爍動畫 */
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink-blue {
+  0%, 40% {
+    opacity: 0;
+  }
+  40%, 70% {
+    opacity: 1;
+  }
+  70%, 100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1170px) {
+  .ingredient {
+    width: 100%; /* 在較小的螢幕上使用全寬度 */
+  }
+}
+

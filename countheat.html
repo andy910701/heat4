@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="UTF-8">
+  <title>看看自己吃了多少熱量~</title>
+  <link rel="stylesheet" href="style02.css">
+</head>
+<body>
+    <h1>算算看自己吃了多少熱量(一匙配料約50g)</h1>
+    <div class="container">
+        <div class="left">
+            <div class="dropdown" id="dropdownHot">
+                <button class="dropbtn" onclick="toggleDropdown('dropdownContentHot')">熱飲區</button>
+                <div class="dropdown-content" id="dropdownContentHot">
+                    <a href="#" onclick="displaySelection('薑汁花生豆花',300,event)">薑汁花生豆花</a>
+                    <a href="#" onclick="displaySelection('花生豆花',280,event)">花生豆花</a>
+                    <a href="#" onclick="displaySelection('粉圓豆花',205,event)">粉圓豆花</a>
+                    <a href="#" onclick="displaySelection('紅豆豆花',195,event)">紅豆豆花</a>
+                    <a href="#" onclick="displaySelection('紅豆湯',345,event)">紅豆湯</a>
+                    <a href="#" onclick="displaySelection('花生湯',425,event)">花生湯</a>
+                    <a href="#" onclick="displaySelection('紅豆花生湯',485,event)">紅豆花生湯</a>
+                    <a href="#" onclick="displaySelection('花生圓仔湯',522,event)">花生圓仔湯</a>
+                    <a href="#" onclick="displaySelection('紅豆圓仔湯',442,event)">紅豆圓仔湯</a>
+                    <a href="#" onclick="displaySelection('芋園豆花',161,event)">芋園豆花</a>
+                    <a href="#" onclick="displaySelection('芝麻湯圓湯',205,event)">芝麻湯圓湯</a>
+                    <a href="#" onclick="displaySelection('芝麻湯圓豆花',255,event)">芝麻湯圓豆花</a>
+                    <!-- 添加更多熱飲區選項 -->
+                </div>
+            </div>
+
+            <div class="dropdown" id="dropdownCold">
+                <button class="dropbtn" onclick="toggleDropdown('dropdownContentCold')">冷飲區</button>
+                <div class="dropdown-content" id="dropdownContentCold">
+                    <a href="#" onclick="displaySelection('花生豆花',280,event)">花生豆花</a>
+                    <a href="#" onclick="displaySelection('粉圓豆花',205,event)">粉圓豆花</a>
+                    <a href="#" onclick="displaySelection('綠豆豆花',195,event)">綠豆豆花</a>
+                    <a href="#" onclick="displaySelection('大紅豆豆花',195,event)">大紅豆豆花</a>
+                    <a href="#" onclick="displaySelection('檸檬豆花',210,event)">檸檬豆花</a>
+                    <a href="#" onclick="displaySelection('綠豆湯',345,event)">綠豆湯</a>
+                    <a href="#" onclick="displaySelection('粉圓綠豆湯',485,event)">粉圓綠豆湯</a>
+                    <a href="#" onclick="displaySelection('粉圓綠豆豆花',325,event)">粉圓綠豆豆花</a>
+                    <a href="#" onclick="displaySelection('丁香綠豆豆花',235,event)">丁香綠豆豆花</a>
+                    <a href="#" onclick="displaySelection('丁香粉圓豆花',245,event)">丁香粉圓豆花</a>
+                    <a href="#" onclick="displaySelection('丁香花生豆花',320,event)">丁香花生豆花</a>
+                    <a href="#" onclick="displaySelection('芋圓豆花',161,event)">芋圓豆花</a>
+                    <!-- 添加更多冷飲區選項 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="ingredients">
+    <div id="ingredientsSection">
+    <div class = "right">
+    <div class="row">
+        <div class="ingredient" onclick="calculateCalories(215,'花生')">
+            <img src="imageheat/花生.jpg" class="ingredient-image">
+            <span class="ingredient-text">花生-215大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(165,'紅豆')">
+            <img src="imageheat/紅豆.jpg" class="ingredient-image">
+            <span class="ingredient-text">紅豆-165大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(175,'綠豆')">
+            <img src="imageheat/綠豆.jpg" class="ingredient-image">
+            <span class="ingredient-text">綠豆-175大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(164,'大紅豆')">
+            <img src="imageheat/大紅豆.jpg" class="ingredient-image">
+            <span class="ingredient-text">大紅豆-164卡</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ingredient" onclick="calculateCalories(100,'芋頭')">
+            <img src="imageheat/芋頭.jpg" class="ingredient-image">
+            <span class="ingredient-text">芋頭-100大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(2,'愛玉')">
+            <img src="imageheat/愛玉.jpg" class="ingredient-image">
+            <span class="ingredient-text">愛玉-2大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(35,'麥片')">
+            <img src="imageheat/麥片.jpg" class="ingredient-image">
+            <span class="ingredient-text">麥片-35大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(189,'薏仁')">
+            <img src="imageheat/薏仁.jpg" class="ingredient-image">
+            <span class="ingredient-text">薏仁-189大卡</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ingredient" onclick="calculateCalories(19,'仙草')">
+            <img src="imageheat/仙草.jpg" class="ingredient-image">
+            <span class="ingredient-text">仙草19大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(75,'椰果')">
+            <img src="imageheat/椰果.jpg" class="ingredient-image">
+            <span class="ingredient-text">椰果-75大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(140,'粉圓')">
+            <img src="imageheat/粉圓.jpg" class="ingredient-image">
+            <span class="ingredient-text">粉圓-140大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(96,'芋園')">
+            <img src="imageheat/芋園.jpg" class="ingredient-image">
+            <span class="ingredient-text">芋圓-96大卡</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ingredient" onclick="calculateCalories(97,'湯圓')">
+            <img src="imageheat/湯圓.jpg" class="ingredient-image">
+            <span class="ingredient-text">湯圓-97大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(55,'QQ圓')">
+            <img src="imageheat/QQ圓.jpg" class="ingredient-image">
+            <span class="ingredient-text">QQ圓-55大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(35,'粉粿')">
+            <img src="imageheat/粉粿.jpg" class="ingredient-image">
+            <span class="ingredient-text">粉粿-35大卡</span>
+        </div>
+        <div class="ingredient" onclick="calculateCalories(160,'煉乳')">
+            <img src="imageheat/煉乳.jpg" class="ingredient-image">
+            <span class="ingredient-text">煉乳-160大卡</span>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div id="selectedIngredientsDisplay"><span id="selectedIngredients"></span></div>
+
+  <div class="controls">
+    <div id="selectedDetails"></div>
+    <button onclick="undoLastIngredient()">上一步</button>
+    <button onclick="resetTotal()">重新計算</button>
+  </div>
+  <h2 id="totalCaloriesDisplay" class="calories">總熱量：<span id="caloriesValue">0</span>大卡</h2>
+
+  <script src="script.js"></script>
+</body>
+</html>
