@@ -203,7 +203,7 @@ body {
   }
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1200px) {
   .ingredient {
     width: 100%; /* 在較小的螢幕上使用全寬度 */
   }
